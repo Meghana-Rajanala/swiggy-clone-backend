@@ -46,6 +46,6 @@ app.listen(port,()=>{
 //home 
 
 app.get('/',(req,res)=>{
-    res.render('dashboard')
+    res.send("<h1>Welcome to Backend</h1>")
 })
 
