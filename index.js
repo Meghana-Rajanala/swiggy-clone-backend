@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 //port number
-const port = 4000
+const port =process.env.port || 4000
 //bodyParser
 app.use('bodyParser',bodyParser)
 
@@ -45,7 +45,7 @@ app.listen(port,()=>{
 
 //home 
 
-app.get('/home',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('dashboard')
 })
 
