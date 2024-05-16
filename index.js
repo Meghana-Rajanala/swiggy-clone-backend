@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const ejs = require('ejs')
-const cors = require('cors')
+
 const bodyParser = require('body-parser')
 const vendorRoutes = require('./routes/vendorroute')
 const firmRoutes = require('./routes/firmroute')
