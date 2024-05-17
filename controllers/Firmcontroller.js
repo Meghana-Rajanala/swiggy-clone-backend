@@ -5,17 +5,17 @@ const Vendor = require('../models/Vendor')
 const multer = require('multer')
 const path = require('path')
 
+
+
 // Configure storage
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => 
-            {
-                 cb(null, 'uploads/'); // Directory to save the files
-             },
+    destination: (req, file, cb) => {
+        cb(null,'uploads/' );// Destination folder where the uploaded images will be stored
+    },
     filename: (req, file, cb) => {
-                cb(null, Date.now() +path.extname(file.originalname)); // Filename
-            }
+        cb(null, Date.now() + path.extname(file.originalname)); // Filename
+    }
 });
-
 // Initialize upload
 const upload = multer({ storage: storage });
 
@@ -24,7 +24,7 @@ const addFirm = async (req,res)=>{
         const {firmName,area,category,region,offer} = req.body;
 
     const image = req.file ? req.file.filename : undefined;
-    
+    console.log(image);
     const vendor = await Vendor.findById(req.vendorId)
     if(!vendor){
         return res.status(403).json({message:"Vendor not found"})
