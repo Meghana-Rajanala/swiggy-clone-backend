@@ -22,7 +22,7 @@ const createProduct = mongoose.Schema({
         type:String
     },
     bestSeller :{
-      type:String
+      type:Boolean
     },
     description:{
         type:String,
