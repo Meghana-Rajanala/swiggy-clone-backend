@@ -3,6 +3,7 @@ const Firm = require('../models/Firm');
 const firmMiddleware = require('../middlewares/verifytoken');
 const Vendor = require('../models/Vendor')
 const multer = require('multer')
+const path = require('path')
 
 // Configure storage
 const storage = multer.diskStorage({

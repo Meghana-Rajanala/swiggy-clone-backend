@@ -2,6 +2,7 @@
 const productModel = require('../models/product')
 const Firm = require('../models/Firm')
 const multer = require('multer')
+const path = require('path')
 
 
 // Configure storage
