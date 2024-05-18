@@ -37,14 +37,15 @@ const addFirm = async (req,res)=>{
     })
    const savedFirm = await firm.save();
    const firmId = savedFirm._id
+   const firmname = savedFirm.firmName
    vendor.firm.push(savedFirm)
     
     await vendor.save();
-    if(vendor.firm.length>0){
+    if(vendor.firm.length>1){
         return res.status(200).json({message:"Vendor can have one Firm"});
     }
 
-    res.status(200).json({message:"Firm added successfully",firmId})
+    res.status(200).json({message:"Firm added successfully",firmId,firmname})
     } catch (error) {
         console.log(error)
         res.status(404).json({error:"Internal Server error"})

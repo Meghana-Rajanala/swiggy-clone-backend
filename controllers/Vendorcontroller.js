@@ -62,6 +62,7 @@ const allVendors = async (req,res)=>{
 
 const singleVendor = async (req,res)=>{
     const vendorId = req.params.id;
+    console.log(vendorId)
     try {
         const vendor = await vendorModel.findById(vendorId).populate('firm');
         if(!vendor) {
